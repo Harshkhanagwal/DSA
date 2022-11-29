@@ -7,7 +7,7 @@ struct node
     struct node *link;
 };
 
-struct node *deleteFirstNode(struct node *head);
+struct node *deleteLastNode(struct node *head);
 void printData(struct node *head);
 
 int main()
@@ -35,30 +35,31 @@ int main()
 
     head->link->link = next;
 
-    printf('linkedList Before deletion : \n');
+    printf("linkedList Before deletion : \n");
     printData(head);
 
-    head = deleteFirstNode(head);
+    deleteLastNode(head);
 
-    printf('linkedList After Deletion : \n');
+    printf("linkedList After Deletion : \n");
     printData(head);
+
 
     return 0;
 }
 
-struct node *deleteFirstNode(struct node *head){
+struct node *deleteLastNode(struct node *head){
     struct node *ptr = head;
+    struct node *ptrLink = ptr->link;
 
-    if (head == NULL){
-        printf('list is empty');
-    }
-    else{
-        struct node *temp = head;
-        head = head -> link;
-        free(temp);
-        temp = NULL;
-    }
-    return head;
+
+        while (ptrLink->link != NULL){
+            ptr = ptr->link;
+            ptrLink = ptrLink->link;
+        }
+
+        ptr->link = NULL;
+        free(ptrLink); 
+    
 }
 
 
@@ -80,3 +81,4 @@ void printData(struct node *head)
         ptr = ptr->link;
     }
 }
+
