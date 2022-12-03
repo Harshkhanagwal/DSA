@@ -1,14 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-/*
-1. strlen
-2. strcpy
-3. strcat 
-4. strcmp 
-
-*/
-
 int main()
 {   
     char firstName[25];
