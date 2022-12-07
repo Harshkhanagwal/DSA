@@ -18,9 +18,9 @@ int main()
 
     char temp[50];
 
-    strcpy(firstName, temp);
-    strcpy(firstName, lastName);
-    strcpy(lastName, temp );
+    strcpy(temp, firstName);
+    strcpy(firstName, lastName, );
+    strcpy(lastName, temp);
 
     printf("After swap Change");
     printf("First Name : %c", firstName);
