@@ -6,7 +6,7 @@ struct node{
     struct node *link;
 };
 
-void count_of_nodes();
+void printData();
 
 int main(){
     struct node *head = NULL;
